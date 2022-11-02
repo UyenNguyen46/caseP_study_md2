@@ -1,7 +1,6 @@
 import {Position, Staff} from "./staff";
 import * as readlineSync from "readline-sync";
 
-
 export class StaffManager {
     staffs: Staff[] = []
 
@@ -100,4 +99,14 @@ export class StaffManager {
             }
         }
     }
+    salary(): number{
+        let id = readlineSync.question('nhap id: ')
+        let defaultworkingdays = 26;
+        let workingdays = +readlineSync.question('Nhap so ngay di lam: ')
+        for (let i = 0; i< this.staffs.length; i++) {
+            return (this.staffs[i].getSalary()/defaultworkingdays) * workingdays
+        }
+    }
+
+
 }

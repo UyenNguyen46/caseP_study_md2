@@ -93,6 +93,14 @@ var StaffManager = /** @class */ (function () {
             }
         }
     };
+    StaffManager.prototype.salary = function () {
+        var id = readlineSync.question('nhap id: ');
+        var defaultworkingdays = 26;
+        var workingdays = +readlineSync.question('Nhap so ngay di lam: ');
+        for (var i = 0; i < this.staffs.length; i++) {
+            return (this.staffs[i].getSalary() / defaultworkingdays) * workingdays;
+        }
+    };
     return StaffManager;
 }());
 exports.StaffManager = StaffManager;
